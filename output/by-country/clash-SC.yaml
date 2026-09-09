@@ -14,48 +14,17 @@ proxies:
   udp: true
   tls: false
   skip-cert-verify: true
-- name: 🇸🇨 SC 02 - xiaohe
-  type: vless
-  server: 172.64.155.209
-  port: 8443
-  uuid: 4ff70740-8c80-48ae-985f-2afe4924e908
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: pubb.clnahanpnln.workers.dev
-  network: ws
-  ws-opts:
-    path: /sync
-    headers:
-      Host: pubb.clnahanpnln.workers.dev
-- name: 🇸🇨 SC 03 - xiaohe
-  type: vless
-  server: 172.67.152.71
-  port: 8880
-  uuid: ed189537-41de-4abe-9f8b-bb75d457722d
-  udp: true
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /pyip=ProxyIP.US.CMLiussss.net
-    headers:
-      Host: lucky-cake-4f58.318-5ee.workers.dev
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
   - 🇸🇨 SC 01 - xiaohe
-  - 🇸🇨 SC 02 - xiaohe
-  - 🇸🇨 SC 03 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
   interval: 300
   proxies:
   - 🇸🇨 SC 01 - xiaohe
-  - 🇸🇨 SC 02 - xiaohe
-  - 🇸🇨 SC 03 - xiaohe
 rules:
 - MATCH,PROXIES
